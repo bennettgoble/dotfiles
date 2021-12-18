@@ -1,0 +1,12 @@
+[user]
+  name = Bennett Goble
+  email = nivardus@nihilocus.com
+[alias]
+  co = checkout
+  br = branch
+  undo = reset @^ --mixed
+  amend = commit -a --amend
+[core]
+  editor = vim
+[init]
+	defaultBranch = main

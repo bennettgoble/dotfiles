@@ -1,0 +1,2 @@
+SYMLINK_DIRS="vim/pack/vendor config/kitty/kitty-themes tmux/plugins"
+EXCLUDES="README.md"

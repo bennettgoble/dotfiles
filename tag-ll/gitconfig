@@ -1,0 +1,16 @@
+[user]
+	name = Bennett Goble
+	email = signal@lindenlab.com
+[init]
+	defaultBranch = main
+[alias]
+	co = checkout
+	br = branch
+	unstage = reset HEAD --
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
