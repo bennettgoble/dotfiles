@@ -31,3 +31,12 @@
 [submodule "vim/pack/vendor/start/vim-go"]
 	path = vim/pack/vendor/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/pack/vendor/start/tpm"]
+	path = vim/pack/vendor/start/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "vim/pack/vendor/start/tmux-sensible"]
+	path = vim/pack/vendor/start/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule "vim/pack/vendor/start/kitty-themes"]
+	path = vim/pack/vendor/start/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
