@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -eua
+
+pad="HID 256c:006d Pad pad"
+stylus="HID 256c:006d Pen stylus"
+
+left_screen="HEAD-0"
+right_screen="HEAD-1"
+tablet_screen="HEAD-2"
+
+xsetwacom set "$stylus" MapToOutput "$right_screen"
+
+xsetwacom set "$pad" Button 1 11
+xsetwacom set "$pad" Button 2 12
+xsetwacom set "$pad" Button 3 13
+xsetwacom set "$pad" Button 8 18
+xsetwacom set "$pad" Button 9 19 
+xsetwacom set "$pad" Button 10 20 

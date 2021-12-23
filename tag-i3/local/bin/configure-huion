@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -eua
+
+pad="HID 256c:006d Pad pad"
+stylus="HID 256c:006d Pen stylus"
+
+left_screen="HEAD-0"
+right_screen="HEAD-1"
+tablet_screen="HEAD-2"
+
+#screen_height=2160
+#screen_width=3840
+#screen_ratio=$(bc -l <<< "$screen_height / $screen_width")
+
+#tablet_height=9500
+#tablet_width=15200
+
+#constrained_height=$(bc <<< "$tablet_height * $screen_ratio")
+#constrained_height=$(printf "%.f" $constrained_height)
+
+#echo "Setting height to $constrained_height"
+
+xsetwacom set "$stylus" MapToOutput "$right_screen"
+#xsetwacom set "$stylus" Area 0 0 $tablet_width $constrained_height
+
+xsetwacom set "$pad" Button 1 11
+xsetwacom set "$pad" Button 2 12
+xsetwacom set "$pad" Button 3 13
+xsetwacom set "$pad" Button 8 18
+xsetwacom set "$pad" Button 9 19 
+xsetwacom set "$pad" Button 10 20 

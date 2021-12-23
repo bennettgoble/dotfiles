@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+file="$(date -u +"%F-%s").jpg"
+
+pushd $HOME > /dev/null
+
+scrot "$@" ~/sync/compost/img/$file
+if [ -n "$SYNC_PUBLIC_URL" ]; then
+  echo "$SYNC_PUBLIC_URL/compost/img/$file"
+fi
+
+popd > /dev/null

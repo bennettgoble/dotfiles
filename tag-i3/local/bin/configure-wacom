@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -eua
+
+pad="Wacom Intuos PT S 2 Pad pad"
+stylus="Wacom Intuos PT S 2 Pen stylus"
+touch="Wacom Intuos PT S 2 Finger touch"
+
+left_screen="HEAD-0"
+right_screen="HEAD-1"
+
+#screen_height=2160
+#screen_width=3840
+#screen_ratio=$(bc -l <<< "$screen_height / $screen_width")
+
+#tablet_height=9500
+#tablet_width=15200
+
+#constrained_height=$(bc <<< "$tablet_height * $screen_ratio")
+#constrained_height=$(printf "%.f" $constrained_height)
+
+#echo "Setting height to $constrained_height"
+
+xsetwacom set "$stylus" MapToOutput "$left_screen"
+#xsetwacom set "$stylus" Area 0 0 $tablet_width $constrained_height
