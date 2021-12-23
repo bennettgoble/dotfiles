@@ -1,4 +1,4 @@
-# nivardus/dotfiles
+# bennettgoble/dotfiles
 
 Primitive dotfiles.
 
