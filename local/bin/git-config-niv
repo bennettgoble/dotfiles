@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+git config user.name "Nivardus"
+git config user.email "nivardus@nihilocus.com"
+git config user.signingkey C549092D34419FE5V
+git config commit.gpgsign true
