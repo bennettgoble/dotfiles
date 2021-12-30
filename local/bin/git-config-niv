@@ -4,5 +4,5 @@ set -e
 
 git config user.name "Nivardus"
 git config user.email "nivardus@nihilocus.com"
-git config user.signingkey C549092D34419FE5V
+git config core.sshCommand "ssh -i ~/.ssh/niv"
 git config commit.gpgsign true

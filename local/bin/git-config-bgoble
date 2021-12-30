@@ -4,4 +4,5 @@ set -e
 
 git config user.name "Bennett Goble"
 git config user.email "bennett@nihilocus.com"
+git config core.sshCommand "ssh -i ~/.ssh/bgoble"
 git config commit.gpgsign false
