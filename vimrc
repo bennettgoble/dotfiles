@@ -49,8 +49,21 @@ endfunction
 " trialing white space (strip spaces)
 noremap <leader>ss :call StripWhitespace()<CR>
 
-" allow jsx syntax highlighting in all *.js files
-let g:jsx_ext_required = 0
+" LSL Optimizer
+function CompileLSL()
+  let lslopt_flags = $LSLOPT_FLAGS
+  if $lslopt_flags == ""
+    let $lslopt_flags = "-P \"-I\" -H -O addstrings,-extendedglobalexpr -p gcpp --precmd=cpp"
+  endif
+  let out = system("lslopt-copy " . $lslopt_flags . " " . expand("%:p"))
+  if v:shell_error != 0
+    echo out
+  else
+    echo "LSL output copied to clipboard"
+  endif
+endfunction
+
+autocmd FileType lsl nnoremap <F5> :call CompileLSL()<CR>
 
 if &diff
   map ] ]c
