@@ -49,17 +49,33 @@ endfunction
 " trialing white space (strip spaces)
 noremap <leader>ss :call StripWhitespace()<CR>
 
+fun CopyText(text)
+  if executable('wl-copy')
+    silent! call system('wl-copy', a:text)
+    return 1
+  elseif executable('xclip')
+    silent! call system('xclip -sel clip', a:text)
+    return 1
+  else
+    echo "No clipboard command found: wl-copy, xclip."
+    return 0
+  endif
+endfun
+
 " LSL Optimizer
 function CompileLSL()
   let lslopt_flags = $LSLOPT_FLAGS
   if $lslopt_flags == ""
     let $lslopt_flags = "-P \"-I\" -H -O addstrings,-extendedglobalexpr -p gcpp --precmd=cpp"
   endif
-  let out = system("lslopt-copy " . $lslopt_flags . " " . expand("%:p"))
+  let out = system($LSL_OPTIMIZER . " " . $lslopt_flags . " " . expand("%:p"))
   if v:shell_error != 0
     echo out
   else
-    echo "LSL output copied to clipboard"
+    let ret = CopyText(out)
+    if ret == 1
+      echo "LSL output copied to clipboard"
+    endif
   endif
 endfunction
 
